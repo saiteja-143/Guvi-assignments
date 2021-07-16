@@ -1,0 +1,386 @@
+                                                                                    guvi assignment for 10th and 11th july 2021 
+
+
+
+ PROBLEM NO 0:PART A         
+
+
+var cat = {
+ name:'Fluffy',
+ activities: ['play', 'eat cat food'],
+ catFriends: [{name: 'bar',activities: ['be grumpy','eat bread omblet'],weight: 8,
+             furcolor: 'white'}, {name: 'foo',activities: ['sleep','pre-sleep naps'],
+             weight: 3}]
+};
+
+
+
+1. Adding Height and weight to Fluffy
+
+cat.Height=4;
+cat.Weight='10 kg';
+
+2.Fluffy name is spelled wrongly. Update it to Fluffyy
+
+cat.name='Fluffyy';
+
+
+3.listing all the activites of fluffyy's catFriends
+
+for(let i=0;i<cat.catFriends.length;i++){
+console.log(cat.catFriends[i].activities);}
+
+
+
+4.printing catFriends names
+
+console.log(cat.catFriends[0].name);
+console.log(cat.catFriends[1].name);
+
+//or
+
+for(var i=0;i<cat.catFriends.length;i++)
+{
+    console.log(cat.catFriends[i].name);
+}
+
+
+
+5.printing total weight of  catFriends
+
+var sum=0;
+for(var i=0;i<cat.catFriends.length;i++)
+{
+    sum+=cat.catFriends[i].weight;
+}
+console.log(sum);
+
+
+6.adding 2 more activites to catfriends
+
+cat.catFriends[0].activities.push('sleep','dancing');
+cat.catFriends[1].activities.push('following owner','being quit');
+console.log(cat.catFriends)
+
+
+
+7.updating furcolor of bar
+
+  cat.catFriends[0].furcolor='grey';
+
+
+
+PROBLEM NO 0:PART B
+
+var myCar = {
+ make: 'Bugatti',
+ model: 'Bugatti La Voiture Noire',
+ year: 2019,
+ accidents: [{date: '3/15/2019', damage_points: '5000',atFaultForAccident: true },{date: '7/4/2022',damage_points: '2200',atFaultForAccident: true},{date: '6/22/2021',damage_points: '7900',
+              atFaultForAccident: true}]
+}
+
+
+
+//  Loop over the accidents array. Change atFaultForAccident from true to false
+
+
+ANSWER:
+for(let i=0;i<myCar.accidents.length;i++)
+{
+    myCar.accidents[i].atFaultForAccident=false;
+}
+// Print the dated of my accidents
+
+ANSWER:
+for(let i=0;i<myCar.accidents.length;i++)
+{
+    console.log(myCar.accidents[i].date);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+PROBLEM NO 1:
+
+
+//Write a function called “printAllValues” which returns an newArray of all the input object’s values.
+
+
+ANSWER:
+var obj = {name : 'RajiniKanth', age : 33, hasPets : false};
+function printAllValues(obj) {
+ // your code here
+ console.log(Object.values(obj));
+ 
+}
+printAllValues(obj);
+
+
+
+
+
+
+
+
+
+PROBLEM NO 2:
+
+//Write a function called “printAllKeys” which returns an newArray of all the input object’s keys.
+
+ANSWER:
+ function printAllKeys(obj) {
+  //your code here
+  console.log(Object.keys(obj));
+ }
+ printAllKeys(obj);
+
+
+
+
+
+
+
+PROBLEM NO:3
+
+Write a function called “convertObjectToList” which converts an object literal into an array of arrays.
+Input (Object):
+var object = {name: “ISRO”, age: 35, role: “Scientist”};
+Output:
+[[“name”, “ISRO”], [“age”, 35], [“role”, “Scientist”]]
+
+
+
+ANSWER:
+var obj = {name: "ISRO", age: 35, role: "Scientist"};
+function convertListToObject(obj) {
+console.log(Object.entries(obj));
+}
+convertListToObject(obj);
+
+
+
+
+
+
+
+
+
+PROBLEM NO:4
+
+Write a function ‘transformFirstAndLast’ that takes in an array, and returns an object with:
+1) the first element of the array as the object’s key, and
+2) the last element of the array as that key’s value.
+Input (Array):
+var array = [“GUVI”, “I”, “am”, “Geek”];
+Output:
+var object = {
+GUVI : “Geek”
+}
+
+
+ANSWER:
+var arr = ["GUVI", "I", "am", "a geek"];
+function transformFirstAndLast(arr) {
+    newObject={};
+    var key =arr[0];
+    var value=arr[arr.length-1];
+    newObject[key]=value;
+ return newObject;
+}
+var onj=transformFirstAndLast(arr);
+console.log(onj);
+
+
+
+
+
+
+
+PROBLEM NO:5
+
+Write a function “fromListToObject” which takes in an array of arrays, and returns an object with each pair of elements in the array as a key-value pair.
+Input (Array):
+var array = [[“make”, “Ford”], [“model”, “Mustang”], [“year”, 1964]];
+Output:
+var object = {
+make : “Ford”
+model : “Mustang”,
+year : 1964
+}
+
+
+ANSWER:
+var arr = [['make', 'Ford'], ['model', 'Mustang'], ['year', 1964]];
+function fromListToObject(arr) {
+ var newObject = {};
+  newObject=Object.fromEntries(arr);
+ 
+ return newObject;
+}
+var obj=fromListToObject(arr);
+console.log(obj);
+
+
+
+
+
+
+
+
+
+PROBLEM NO:6
+
+Write a function called “transformGeekData” that transforms some set of data from one format to another.
+
+Input (Array):
+var array = [[[“firstName”, “Vasanth”], [“lastName”, “Raja”], [“age”, 24], [“role”, “JSWizard”]], [[“firstName”, “Sri”], [“lastName”, “Devi”], [“age”, 28], [“role”, “Coder”]]];
+Output:
+[
+{firstName: “Vasanth”, lastName: “Raja”, age: 24, role: “JSWizard”},
+{firstName: “Sri”, lastName: “Devi”, age: 28, role: “Coder”}
+]
+
+
+ANSWER:
+
+var arr=[[['firstName', 'Vasanth'], ['lastName', 'Raja'], ['ge', 24], ['role' ,'JSWizard']], [['firstName', 'Sri'], ['lastName', 'Devi'], ['age', 28], ['role', 'Coder']]];
+function transformEmployeeData(arr) {
+var tranformEmployeeList =[];
+ for(let i=0;i<arr.length;i++)
+ {
+   for(let j=0;j<arr[i].length;j++)
+   {
+     var a={};
+     a=Object.fromEntries(arr[i]);
+   }
+   tranformEmployeeList.push(a);
+ }
+   
+ //Your code
+ 
+return tranformEmployeeList;
+}
+var a=transformEmployeeData(arr);
+console.log(a);
+//nsole.log(arr[0].length);
+
+
+
+
+
+
+
+
+
+
+
+PROBLEM NO:8
+
+
+I have a mock data of security Questions and Answers. You function should take the object and a pair of strings and should return if the quest is present and if its valid answer
+
+
+ANSWER:
+
+var securityQuestions = [
+ {
+ question: "What was your first pet’s name?",
+ expectedAnswer: "FlufferNutter"
+ },
+ {
+ question: "What was the model year of your first car?",
+ expectedAnswer: "1985"
+ },
+ {
+ question: "What city were you born in?",
+ expectedAnswer: "NYC"
+ }
+]
+function chksecurityQuestions(securityQuestions,questio,ans) {
+
+ // your code here return true or false;
+ for(let i=0;i<securityQuestions.length;i++){
+    
+ if(securityQuestions[i].question===questio){
+     if(securityQuestions[i].expectedAnswer===ans){
+     return true;
+     }
+ else
+ {
+     return false;
+ }
+}
+}
+}
+//Test case1:
+var ques = "What was your first pet’s name?";
+var ans  =  "FlufferNutter";
+var statu = chksecurityQuestions(securityQuestions, ques, ans);
+console.log(statu); // true
+//Test case2:
+var ques = "What was your first pet’s name?";
+var ans  =  "DufferNutter";
+var stat = chksecurityQuestions(securityQuestions, ques, ans);
+console.log(stat); // flase
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+PROBLEM NO:9
+
+Write a function to return the list of characters below 20 age
+
+
+ANSWER:
+
+var students = [
+ {name: "Siddharth Abhimanyu", age: 21}, 
+ { name: "Malar", age: 25},
+ {name: "Maari",age: 18},
+ {name: "Bhallala Deva",age: 17},
+ {name: "Baahubali",age: 16},
+ {name: "AAK chandran",age: 23}, 
+ {name:"Gabbar Singh",age: 33},
+ {name: "Mogambo",age: 53},
+ {name: "Munnabhai",age: 40},
+ {name: "Sher Khan",age: 20},
+ {name: "Chulbul Pandey",age: 19},
+ {name: "Anthony",age: 28},
+ {name: "Devdas",age: 56} 
+ ];
+ function returnMinors(arr)
+{
+    var s=[];
+    for(let i=0;i<students.length;i++)
+    {
+        if(students[i].age<20){
+            s.push(students[i].name);
+        }
+    }
+ return s   
+}
+console.log(returnMinors(students));
+
+  
