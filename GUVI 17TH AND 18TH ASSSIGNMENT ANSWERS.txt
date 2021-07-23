@@ -1,0 +1,229 @@
+PROBLEM NO:1
+Print Odd Numbers in a array.
+
+ANSWER:
+let arr=[1,2,3,4,5,6,7,8,9]; 
+(function(){
+   
+    for(let i=0;i<arr.length;i++)
+    {
+    
+        if(arr[i]%2!==0)
+        {
+           // document.getElementById("p1").innerHTML=arr[i];
+           console.log(arr[i]);
+        }
+    }
+})(arr);
+
+
+
+PROBLEM NO:2
+CONVERT all strings to title case in an String array.
+
+
+
+ANSWER:
+
+let str_arr=["sai teja","Welcome to guvi"];
+let a=function(str){
+    console.log(str);
+     str = str.toLowerCase().split(' ');
+  for (var i = 0; i < str.length; i++) {
+    str[i] = str[i].charAt(0).toUpperCase() + str[i].slice(1);
+  }
+return str.join(' ');
+
+
+}
+let show=function(str_arr){
+     for(let j=0;j<str_arr.length;j++){
+        str_arr[j]= a(str_arr[j]);
+     }
+     console.log(str_arr);
+
+}
+show(str_arr);
+
+
+PROBLEM NO:3
+Sum of all numbers in an Array.
+
+
+
+ANSWER
+let arr=[10,10,10,10];
+(function(){
+    let sum=0;
+    for(let i=0;i<arr.length;i++)
+    {
+        sum=sum+arr[i];
+    }
+    console.log(sum);
+})(arr);
+  
+
+
+ 
+PROBLEM NO:4
+Return all prime numbers in an array
+
+
+
+ANSWER:
+
+let arr=[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17];
+
+let a=function(num){
+    let flag=0;
+    for(let i=2;i<num/2;i++){
+        if(num%i===0){
+            flag=1;
+            break;
+        }
+    }
+        if(flag===0){
+            console.log("This is a prime number"+" "+num);
+        }
+        
+        
+        
+    }
+    
+
+
+let prime=function(arr){
+    for(let j=0;j<arr.length;j++)
+    {
+       // console.log(arr[j]);
+      a(arr[j]);  
+    }
+}
+prime(arr);
+
+
+
+
+
+
+
+PROBLEM NO:5
+Return all palindrome numbers in an array.
+
+
+
+ANSWERS:
+let arr=[161,151,141];
+
+var a=function(num){
+    //console.log("sai")
+
+//console.log(num);
+var rem,final=0;
+var temp=num;
+while(num>0){
+    //console.log(num);
+    rem=num%10;
+     num=parseInt(num/10);
+    final=(final*10)+rem;
+   
+    
+}
+console.log(final);
+if(temp===final){
+    console.log(final+" "+"is a palindrome number");
+    //console.log("sai")
+}
+        
+    }
+    
+
+
+let palin=function(arr){
+    for(let j=0;j<arr.length;j++)
+    {
+       // console.log(arr[j]);
+      a((+arr[j]));  
+    }
+}
+palin(arr);
+
+
+
+
+PROBLEM NO:6
+Return median of two sorted arrays with same size.
+
+
+
+
+
+ANSWER:
+
+let arr1=[1,2,5];
+let arr2=[3,4];
+let merger=function(){
+    arr1=arr1.concat(arr2);
+   // console.log(arr1);
+    return arr1;
+}
+//merger(arr1,arr2);
+
+let sorter=function(){
+    
+    return arr1.sort(function(a, b){return a-b});
+}
+
+
+let median=function(){
+    let merge=merger(arr1,arr2);
+    let sort=sorter(merge);
+    if(sort.length%2===0){
+        let first=parseInt(sort.length/2);
+        let second=first+1;
+    let median=(first+second)/2;
+    console.log(median);
+    }
+    else{
+        let div=parseInt(sort.length/2);
+        let rem=parseInt(sort.length%2);
+        let median=div+rem;
+        console.log(median);
+    }
+    
+}
+median(arr1,arr2);
+
+
+
+
+
+PROBLEM No:7
+REMOVE duplicates from an array;
+
+
+
+ANSWER:
+
+let arr = [1,2,3,4,5,1,2,3,4,5];
+let uniquearr = [...new Set(arr)];
+
+console.log(uniquearr);
+
+
+PROBLEM NO:8
+Rotating an array for K times.
+
+
+ANSWER:
+let rotateArray1 = function(nums, k) {
+
+  for (let i = 0; i < k; i++) {
+      nums.unshift(nums.pop());
+  }
+  console.log(nums);
+
+  return nums;
+}
+let arr=[1,2,3,4,5]
+rotateArray1(arr,3);
